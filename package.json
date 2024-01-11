@@ -1,6 +1,6 @@
 {
   "name": "velo-dal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package to serve as a simple DAL for velo collection",
   "main": "index.js",
   "scripts": {
