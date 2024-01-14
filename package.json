@@ -1,6 +1,6 @@
 {
   "name": "velo-collection-dal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A package to serve as a simple DAL for velo collection",
   "main": "index.js",
   "scripts": {
@@ -19,5 +19,6 @@
   "bugs": {
     "url": "https://github.com/kobym707/velo-collection-dal/issues"
   },
-  "homepage": "https://github.com/kobym707/velo-collection-dal#readme"
+  "homepage": "https://github.com/kobym707/velo-collection-dal#readme",
+  "type":"module"
 }
