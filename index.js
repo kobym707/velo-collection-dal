@@ -1,4 +1,5 @@
 module.exports = {
+    helloNPM,
     upsertItem,
     removeItem,
     getItem,
@@ -17,6 +18,11 @@ function projectObject(originalObject,newFieldsObject) {
     );
     return newObject
 }
+
+export function helloNPM() {
+    return 'hello from velo collection dal';
+}
+
 
 /**
  * Inserts or update an item to a collection.
