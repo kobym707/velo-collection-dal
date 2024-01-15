@@ -1,14 +1,3 @@
-module.exports = {
-    helloNPM,
-    upsertItem,
-    removeItem,
-    getItem,
-    adminDBOptions:  {
-        "suppressAuth": true,
-        "suppressHooks": true
-    }
-}
-
 import wixData from 'wix-data';
 
 function projectObject(originalObject,newFieldsObject) {
@@ -32,7 +21,7 @@ export function helloNPM() {
  * @param {object} options Use AppDAL.adminDBOptions to gain admin access
  * @returns {Promise<object>} The inserted/updated item
  */
- async function upsertItem(collectionName,primaryKey,itemToUpsert,options) {
+ export async function upsertItem(collectionName,primaryKey,itemToUpsert,options) {
     console.log(`[collections-dal:upsert: ${JSON.stringify(itemToUpsert)}`);
     if (!Object.keys(itemToUpsert).includes(primaryKey)) throw new Error(`[dal-instances:upsertItem] item to upsert ${itemToUpsert} does not contain primary key=${primaryKey}`);
         try {
@@ -65,7 +54,7 @@ export function helloNPM() {
  * @param {object} options Use AppDAL.adminDBOptions to gain admin access
  * @returns {Promise<object>} Fulfilled - The removed item. Rejected - The error that caused the rejection.
  */
- async function removeItem(collectionName,primaryKey,primaryKeyValue,options) {
+export async function removeItem(collectionName,primaryKey,primaryKeyValue,options) {
     try {
         let itemsToDelete = await wixData.query(collectionName).eq(primaryKey, primaryKeyValue).find(options);
         const itemIdToDelete = itemsToDelete.items[0]._id;
@@ -81,7 +70,7 @@ export function helloNPM() {
 }
 
 
- async function getItem(collectionName,primaryKey,primaryKeyValue,options) {
+export async function getItem(collectionName,primaryKey,primaryKeyValue,options) {
 
     try {
         let items = await wixData.query(collectionName).eq(primaryKey, primaryKeyValue).find(options);
